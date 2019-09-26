@@ -30,7 +30,7 @@ router.get('/edit/:id', (req, res) =>
 {
     myModel.findOne({_id: req.params.id})
     .then(instance => {
-        res.render('edit', {myInstance})
+        res.render('edit', {instance})
     }).catch(err => {
         console.log(err);
     }
@@ -38,13 +38,12 @@ router.get('/edit/:id', (req, res) =>
 })
 
 
-
 router.get('/new', (req, res) => {
     res.render('new');
 })
 
 router.get("/:id", (req, res) => {
-    myModel.findOne({_id: req.params.id}).then(instance => res.render('show', {myInstance}));
+    myModel.findOne({_id: req.params.id}).then(instance => res.render('show', {instance}));
 });
 
 
