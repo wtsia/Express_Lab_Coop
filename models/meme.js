@@ -7,6 +7,6 @@ const myMemeSchema = new mongoose.Schema({
     date: {type: Date, default: Date.now}
 });
 
-const memeModel = mongoose.model('Mymeme', myMemeSchema);
+const memeModel = mongoose.model("Meme", myMemeSchema);
 
 module.exports = memeModel;

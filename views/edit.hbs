@@ -1,0 +1,9 @@
+<h2>Edit Item:</h2>
+
+<form action="/{{myInstance.id}}?_method=put" method="post">
+  <p>
+    <label>Attribute:</label>
+    <input type="text" value="{{myInstance.attribute}}" name="attribute"/>
+  </p>
+  <input type="submit" value="Update" />
+</form>
