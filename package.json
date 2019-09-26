@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/wtsia/Express_Lab_Coop#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
-    "hbs": "^4.0.4"
+    "hbs": "^4.0.4",
+    "mongoose": "^5.7.1"
   }
 }
