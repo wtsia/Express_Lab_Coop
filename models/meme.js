@@ -1,12 +1,12 @@
 const mongoose = require('../db/connection');
 
-const myMemeSchema = new mongoose.Schema({
+const MemeSchema = new mongoose.Schema({
     url: String,
     title: String,
     description: String,
     date: {type: Date, default: Date.now}
 });
 
-const memeModel = mongoose.model("Meme", myMemeSchema);
+const memeModel = mongoose.model("meme", MemeSchema);
 
 module.exports = memeModel;

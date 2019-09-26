@@ -4,16 +4,18 @@ const myModel = require('../models/meme');
 
 
 router.get('/', (req, res) => {
-    myModel.find({}).then(myInstances => res.render('index', {myInstances}));
+    myModel.find({}).then(instances => res.render('index', {instances}));
 })
 
-router.get("/:id", (req, res) => {
-    myModel.findOne({_id: req.params.id}).then(myInstance => res.render('show', {myInstance}));
-});
 
 router.get('/new', (req, res) => {
     res.render('new');
 })
+
+router.get("/:id", (req, res) => {
+    myModel.findOne({_id: req.params.id}).then(instance => res.render('show', {myInstance}));
+});
+
 
 router.get('/edit/id', (req, res) =>
 {
@@ -27,7 +29,7 @@ router.get('/edit/id', (req, res) =>
 })
 router.post('/', (req, res) => {
     myModel.create(req.body)
-    .then(myNewItem => {
+    .then(newItem => {
         res.redirect('/');
     }).catch(err => {
         console.log(err);
@@ -37,7 +39,7 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
     myModel.findOneAndUpdate({_id: req.params.id}, req.body, {new: true})
-    .then(myInstance =>{
+    .then(instance =>{
         res.redirect('/')
 }).catch(err => {
     console.log(err);
