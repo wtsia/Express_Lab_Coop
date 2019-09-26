@@ -1,9 +1,10 @@
 <h1>myModel</h1>
 
 <ul>
-    {{#each myInstances as |myInstance|}}
+    {{#each instances as 
+    |instance|}}
     <li>
-        {{myInstance.attribute}}
+        {{instance.attribute}}
     </li>
     {{/each}}
 </ul>
