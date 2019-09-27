@@ -1,10 +1,11 @@
-<h1>myModel</h1>
-
-<ul>
+<h1>Memes!!</h1>
+<a href="/new">Enter a New Meme</a>
+<ol>
     {{#each instances as 
     |instance|}}
     <li>
         <a href="/{{instance.id}}">{{instance.title}}</a>
+        <p>{{instance.date}}</p>
     </li>
     {{/each}}
-</ul>
+</ol>

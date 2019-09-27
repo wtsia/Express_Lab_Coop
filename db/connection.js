@@ -8,5 +8,7 @@ mongoose.connect('mongodb://localhost/meme');
 
 mongoose.Promise = Promise;
 
+//Promise.reject(new Error('woops'));
+
 module.exports = mongoose;
 

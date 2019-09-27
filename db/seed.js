@@ -10,4 +10,5 @@ myModel.deleteMany({})
     console.log("WE GOT DATA");
     process.exit();
 })
+.catch(err => console.log(err, 'hello in seedJS'))
 
