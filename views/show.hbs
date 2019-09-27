@@ -1,14 +1,18 @@
-<h1>{{instance.title}}</h1>
+<div id="show">
+    <h1>{{instance.title}}</h1>
+    
+    <a class="show"href="{{instance.url}}">{{instance.url}}</a>
+    <h4>Description: {{instance.description}}</h4>
+    <h5>Date Created: {{instance.date}}</h5>
+
+    <div id="icons">
+    <form action="/{{instance.id}}?_method=delete" method="post">
+
+     <input type="image" src="https://cdn1.iconfinder.com/data/icons/business-office-and-internet-4-1/48/184-512.png" value="Delete" width="20px" height="20px">
+    <a href="/edit/{{instance.id}}" id="aTag"><img id="icon" src="https://image.flaticon.com/icons/svg/61/61456.svg" id="icon" ></a>
 
 
-<a href="{{instance.url}}">{{instance.url}}</a>
-<h4>{{instance.description}}</h4>
-<h5>{{instance.date}}</h5>
-
-<a href="/edit/{{instance.id}}">Edit</a>
-
+    </div>
+</div>
 
 {{!-- add a delete button --}}
-<form action="/{{instance.id}}?_method=delete" method="post">
-    <input type="submit" value="Delete">
-</form>
