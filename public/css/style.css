@@ -1,8 +1,35 @@
+header {
+    background-color: black;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: space-evenly
+}
 h1 {
-    color: red;
+    margin: 20;
 }
 
 body {
-    background: black;
+    background-color: white;
+    color: black;
+    font-family: 'Playfair Display', serif;
+}
+
+nav {
+    background-color: lightgray;
     color: white;
+    display: flex;
+}
+
+a:link, a:visited {
+    background-color: blue;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+  
+a:hover, a:active {
+    background-color: lightblue;
 }
