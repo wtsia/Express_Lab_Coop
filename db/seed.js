@@ -2,7 +2,7 @@ const myModel = require('../models/meme');
 
 const seedData = require('./seeds.json');
 
-myModel.deleteOne({}) 
+myModel.deleteMany({})
 .then(() => {
     return myModel.insertMany(seedData);
 })
@@ -10,3 +10,4 @@ myModel.deleteOne({})
     console.log("WE GOT DATA");
     process.exit();
 })
+

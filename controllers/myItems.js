@@ -2,6 +2,12 @@ const express = require('express');
 const router = express.Router();
 const myModel = require('../models/meme');
 
+
+router.delete('/:id', (req, res) => {
+    myModel.findOneAndDelete({_id: req.params.id}).then(() => {
+        res.redirect('/');
+    })
+})
 router.post('/', (req, res) => {
     myModel.create(req.body)
     .then(newItem => {
