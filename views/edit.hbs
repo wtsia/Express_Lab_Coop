@@ -2,8 +2,16 @@
 
 <form action="/edit/{{instance.id}}?_method=put" method="post">
   <p>
-    <label>Attribute:</label>
+    <label>Change Title:</label>
     <input type="text" value="{{instance.title}}" name="title"/>
+  </p>
+  <p>
+      <label>Change description: </label>
+      <input type="text" value="{{instance.description}}" name="description"/>
+  </p>
+  <p>
+      <label>Change URL: </label>
+      <input type="text" value="{{instance.url}}" name="url"/>
   </p>
   <input type="submit" value="Update" />
 </form>

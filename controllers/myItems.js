@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const myModel = require('../models/meme');
-
+const moment = require('moment');
+var createDate = moment();
 //MIDDLEWARE
 
 //ROUTES
@@ -13,7 +14,7 @@ router.delete('/:id', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-    req.body.created_at = new Date();
+    req.body.created_at = createDate.format("dddd, MMMM Do YYYY, h:mm:ss a");
     myModel.create(req.body)
     .then(newItem => {
         res.redirect('/');
@@ -23,8 +24,8 @@ router.post('/', (req, res) => {
     )
 });
 
-router.put('/:id', (req, res) => {
-    myModel.findOneAndUpdate({_id: req.params.id}, req.body, {new: true})
+router.put('/edit/:id', (req, res) => {
+    myModel.findOneAndUpdate({_id: req.params.id}, req.body, )
     .then(instance =>{
         res.redirect('/')
     }) .catch(err => {

@@ -6,3 +6,9 @@
 <h5>{{instance.date}}</h5>
 
 <a href="/edit/{{instance.id}}">Edit</a>
+
+
+{{!-- add a delete button --}}
+<form action="/{{instance.id}}?_method=delete" method="post">
+    <input type="submit" value="Delete">
+</form>
