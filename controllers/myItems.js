@@ -2,6 +2,10 @@ const express = require('express');
 const router = express.Router();
 const myModel = require('../models/meme');
 
+//MIDDLEWARE
+
+//ROUTES
+
 router.delete('/:id', (req, res) => {
     myModel.findOneAndDelete({_id: req.params.id}).then(() => {
         res.redirect('/');
@@ -37,8 +41,8 @@ router.get('/edit/:id', (req, res) =>
 {
     myModel.findOne({_id: req.params.id})
     .then(instance => {
-        res.render('edit', {instance})
-    }).catch(err => {
+        res.render('edit', {instance})}
+    ).catch(err => {
         console.log(err);
     }
     )

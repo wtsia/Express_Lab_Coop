@@ -2,12 +2,15 @@ const express = require('express');
 const hbs = require('hbs');
 const app = express();
 const parser = require('body-parser');
-const bodyParser = app.use(parser.urlencoded({extended: true}));
 
 const methodOverride = require('method-override');
-app.use(methodOverride('_method'));
 
 app.set("view engine", "hbs");
+app.use(parser.urlencoded({extended: true}));
+
+app.use(methodOverride('_method'));
+
+
 
 const myController = require('./controllers/myItems');
 
