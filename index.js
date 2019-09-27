@@ -18,7 +18,7 @@ app.use('/', myController);
 
 app.use('/assets', express.static('public'));
 
-app.use(express.static('/public'));
+app.use(express.static('public'));
 
 app.listen(7777, () => {
     console.log("running on port 7777!");
